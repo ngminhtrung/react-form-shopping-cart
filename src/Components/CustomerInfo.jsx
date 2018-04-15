@@ -18,14 +18,14 @@ function CustomerInfo() {
                 <span className="deliveryAddress">Nhận tại siêu thị</span>
                 <br />
                 <div className="payment-button">
-                    <a href="#" className="payment-onDelivery">
+                    <a href="" className="payment-onDelivery">
                         <div className="button-content">
                             THANH TOÁN TẠI NHÀ
                     <br />
                             <span>Xem hàng trước, không mua không sao</span>
                         </div>
                     </a>
-                    <a href="#" className="payment-online">THANH TOÁN ONLINE
+                    <a href="" className="payment-online">THANH TOÁN ONLINE
                     <br />
                         <span>Bằng thẻ ATM, Visa, Master</span>
                     </a>
