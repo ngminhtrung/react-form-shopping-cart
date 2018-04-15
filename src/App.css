@@ -126,7 +126,7 @@ nav {
   display: table;
 }
 
-.btn-group button: hover {
+.btn-group button:hover {
   background-color: lightblue;
 }
 
