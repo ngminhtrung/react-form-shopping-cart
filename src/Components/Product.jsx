@@ -1,13 +1,22 @@
 import React from 'react';
+import formatNumber from '../utils';
 
 class Product extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             quantity: 1,
+            isHidden: false
         }
         this.increaseQuantity = this.increaseQuantity.bind(this);
         this.decreaseQuantity = this.decreaseQuantity.bind(this);
+        this.dismiss = this.dismiss.bind(this);
+    }
+
+    dismiss() {
+        this.setState({
+            isHidden: true
+        });
     }
 
     increaseQuantity() {
@@ -38,18 +47,31 @@ class Product extends React.Component {
     }
 
     render() {  
+        let customStyles;
+
+        if (this.state.isHidden) {
+            customStyles = {
+                height: '0',
+                opacity: '0'
+            }
+        } else {
+            customStyles = {
+                opacity: '1'
+            }
+        }
+
         return (
-            <div className="product">
+            <div className="product" style={customStyles}>
                 <div className="product-thumbnail">
                     <img src="http://via.placeholder.com/60x100" alt="Placeholder" />
-                    <button className="button-delete">Xóa</button>
+                    <button className="button-delete" onClick={this.dismiss}>Xóa</button>
                 </div>
                 <div className="product-info">
                     <div className="product-name">
                         {this.props.product.name}
                     </div>
                     <div className="product-price price-amount">
-                        {this.props.product.price} đ
+                        {formatNumber(this.props.product.price)} đ
                     </div>
                     <div className="product-bonus">
                         <ul>

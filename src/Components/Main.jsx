@@ -1,26 +1,39 @@
 import React, { Component } from 'react';
 import Products from './Products';
-import ProducsPaymentSummary from './ProductSPaymentSummary';
+import ProductsPaymentSummary from './ProductSPaymentSummary';
+import ProductData from './ProductData';
 import CustomerInfo from './CustomerInfo';
 
 class Main extends Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       productsTotalPrice: 0
-    },
-      this.getProductsTotalPrice = this.getProductsTotalPrice.bind(this);
+    };
+
+    const calculateTotalPrice = (accumulator, current) => {
+      return accumulator + current.price;
+    }
+
+    const productsTotalPrice = ProductData.reduce(calculateTotalPrice, 0);
+
+    this.state = {
+      productsTotalPrice: productsTotalPrice
+    };
+
+    this.getProductsTotalPrice = this.getProductsTotalPrice.bind(this);
   }
 
   getProductsTotalPrice(amount) {
-    this.setState({ productsTotalPrice: amount });
+    this.setState({ productsTotalPrice: this.state.productsTotalPrice + amount });
   }
 
   render() {
     return (
       <div className="main">
         <Products onProductsTotalPriceChange={this.getProductsTotalPrice} />
-        <ProducsPaymentSummary productsTotalPrice={this.state.productsTotalPrice} />
+        <ProductsPaymentSummary productsTotalPrice={this.state.productsTotalPrice} />
         <CustomerInfo />
       </div>
     );

@@ -1,7 +1,7 @@
 const ProductData = [
     {
         name: "iPhone 6 32GB",
-        price: 100,
+        price: 10000000,
         bonus: [
             "Phiếu mua hàng Apple Watch S3 GPS trị giá 1 triệu (không cộng nhiều phiếu trên 1 sản phẩm",
             "Giảm ngay 1 triệu khi mua online (áp dụng cho đơn hàng đặt và nhận hàng từ ngày 11 - 15/4)"
@@ -11,7 +11,7 @@ const ProductData = [
     },
     {
         name: "OPPO F5 Youth",
-        price: 200,
+        price: 2500000,
         bonus: [
             "Phiếu mua hàng trị giá 100.000đ khi mua online",
             "Giảm ngay 500.000đ (áp dụng cho đơn hàng đặt và nhận hàng từ ngày 13-15/4"
