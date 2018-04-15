@@ -5,17 +5,7 @@ class Products extends Component {
 
     constructor(props) {
         super(props);
-
-        // const calculateTotalPrice = (accumulator, current) => {
-        //     return accumulator + current.price;
-        // }
-        // const productsTotalPrice = ProductData.reduce(calculateTotalPrice, 0);
-
-        // this.state = {
-        //     productsTotalPrice: productsTotalPrice
-        // };
         this.setTotalPrice = this.setTotalPrice.bind(this);
-
     }
 
     setTotalPrice(amount, type) {
