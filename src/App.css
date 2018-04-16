@@ -149,6 +149,36 @@ nav {
   text-align: right;
 }
 
+.coupon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-coupon {
+  width: 70%;
+  border: 1px solid #cccccc;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  min-height: 35px;
+  border-radius: 5px;
+}
+
+.button-coupon {
+  width: 30%;
+  background-color: #1B7FCC;
+  color: white;
+  margin: 10px;
+  margin-top: 0px;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .customer-info {
   padding: 10px;
   border-top: solid 1px lightgrey;

@@ -9,6 +9,10 @@
     - [x] Nhấn nút thêm bớt số lượng, sẽ thay đổi tổng tiền cần thanh toán
     - [x] Xóa item bằng nút xóa. Ghi chú: Vẫn đang bị 1 lõi chưa khắc phục được
     - [ ] Click vào "Sử dụng mã giảm giá" sẽ mở ra ô để nhập mã (dạng accordion)
+        - [ ] Nút "Áp dụng" sẽ đưa ra cảnh báo "Bạn cần nhập số điện thoại" khi field *Số điện thoại* chưa được điền
+        - [ ] Hiện thông báo bên dưới nút "Áp dụng": 
+                - Màu xanh lá cânh "Mã giảm giá áp dụng thành công"
+                - Màu đỏ "Rất tiếc mã giảm giá không áp dụng được"
     - [ ] Click vào "Điạ chỉ giao hàng" sẽ mở ra ô để chọn và điền Thành phố, Quận, Huyện, tên Đường, số nhà
     - [ ] CLick vào "Nhận tại siêu thị" sẽ mở ra các ô chọn siêu thị gần nhất    
 
