@@ -6,6 +6,7 @@ class Products extends Component {
     constructor(props) {
         super(props);
         this.setTotalPrice = this.setTotalPrice.bind(this);
+        this.getProductDismissed = this.getProductDismissed.bind(this);
     }
 
     setTotalPrice(amount, type) {
@@ -13,12 +14,15 @@ class Products extends Component {
         this.props.onProductsTotalPriceChange(signed * amount);
     }
 
+    getProductDismissed(amount) {
+        this.props.onProductDismissed(amount);
+    }
 
     render() {
         return (
             <div className="products">
-                <Product onChangeProductQuantity={this.setTotalPrice} product={ProductData[0]} />
-                <Product onChangeProductQuantity={this.setTotalPrice} product={ProductData[1]} />
+                <Product onProductDeleted={this.getProductDismissed} onChangeProductQuantity={this.setTotalPrice} product={ProductData[0]} />
+                <Product onProductDeleted={this.getProductDismissed} onChangeProductQuantity={this.setTotalPrice} product={ProductData[1]} />
             </div>
         )
     }

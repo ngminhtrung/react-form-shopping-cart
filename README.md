@@ -1,6 +1,6 @@
-## TẬP CLONE SHOPPING CART FORM CỦA THẾ GIỚI DI ĐỘNG
+# TẬP CLONE SHOPPING CART FORM CỦA THẾ GIỚI DI ĐỘNG
 
-### Requirments & Progress
+## Requirments & Progress
 
 ![ScreenShot Thegioididong](./mockup/hegioididong_com_gio_hang.png)
 
@@ -12,5 +12,11 @@
     - [ ] Click vào "Điạ chỉ giao hàng" sẽ mở ra ô để chọn và điền Thành phố, Quận, Huyện, tên Đường, số nhà
     - [ ] CLick vào "Nhận tại siêu thị" sẽ mở ra các ô chọn siêu thị gần nhất    
 
-### Notes
+## Notes
+
+
+### Lỗi gặp phải:
+
+- 2018.04.15: Giải quyết vấn đề với việc tăng, giảm số lượng items. Phát hiện ra là do không để ý đến vấn đề "hoisting" trong JavaScript, để code tuần tự từ trên xuống. Không nhớ chính xác code cũ để minh họa ở đây.
+- 2018.04.16: Giải quyết issue "[Nhấn nút xóa không có tác dụng](https://github.com/ngminhtrung/react-form-shopping-cart/issues/1")
 

@@ -23,16 +23,21 @@ class Main extends Component {
     };
 
     this.getProductsTotalPrice = this.getProductsTotalPrice.bind(this);
+    this.getProductDismissed = this.getProductDismissed.bind(this);
   }
 
   getProductsTotalPrice(amount) {
     this.setState({ productsTotalPrice: this.state.productsTotalPrice + amount });
   }
 
+  getProductDismissed(amount) {
+    this.setState({productsTotalPrice: this.state.productsTotalPrice - amount});
+  }
+
   render() {
     return (
       <div className="main">
-        <Products onProductsTotalPriceChange={this.getProductsTotalPrice} />
+        <Products onProductsTotalPriceChange={this.getProductsTotalPrice} onProductDismissed={this.getProductDismissed} />
         <ProductsPaymentSummary productsTotalPrice={this.state.productsTotalPrice} />
         <CustomerInfo />
       </div>

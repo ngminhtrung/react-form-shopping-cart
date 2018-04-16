@@ -14,9 +14,15 @@ class Product extends React.Component {
     }
 
     dismiss() {
+
+        const currentQuantity = this.state.quantity;
         this.setState({
+            quantity: 0,
             isHidden: true
         });
+        
+        this.props.onProductDeleted(currentQuantity * this.props.product.price);
+
     }
 
     increaseQuantity() {
@@ -51,12 +57,7 @@ class Product extends React.Component {
 
         if (this.state.isHidden) {
             customStyles = {
-                height: '0',
-                opacity: '0'
-            }
-        } else {
-            customStyles = {
-                opacity: '1'
+                display: 'none'
             }
         }
 
