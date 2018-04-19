@@ -11,7 +11,11 @@ class CustomerInfo extends Component {
     }
 
     handleInput = event => {
-
+        const inputName = event.target.name;
+        const inputValue = event.target.value;
+        this.setState({
+            [inputName]: inputValue
+        })
     }
     
     render() {
@@ -28,9 +32,6 @@ class CustomerInfo extends Component {
                             placeholder="Họ và tên" 
                             onChange={this.handleInput}
                             required />
-                        <FormErrors 
-                            isHidden={this.state.form.fullname.isValid} 
-                            message={this.state.form.fullname.message} />
                         <input 
                             type="text"
                             name="phonenumber" 
@@ -39,8 +40,8 @@ class CustomerInfo extends Component {
                             onChange={this.handleInput}
                             required />
                         <FormErrors 
-                            isHidden={this.state.form.phonenumber.isValid} 
-                            message={this.state.form.phonenumber.message} />
+                            inputMessage={this.state.phonenumber}
+                            type="phonenumber" />
                         <input type="text" name="others" className="input-field" placeholder="Yêu cầu khác (không bắt buộc)" />
                     </div>
                     <p>Để được giao hàng nhanh hơn, hãy chọn thêm</p>
