@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function CouponInsert(props) {
 
@@ -13,6 +13,7 @@ function CouponInsert(props) {
             display: ''
         }
     }
+    
     return (
         <div className="coupon" style={customStyles}>
             <input type="text" className="input-coupon" name="coupon" placeholder="Nhập mã giảm giá" required />

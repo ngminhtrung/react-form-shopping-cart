@@ -19,18 +19,13 @@ class Main extends Component {
       isCouponInsertHidden: true,
     };
 
-    this.getProductsTotalPrice = this.getProductsTotalPrice.bind(this);
     this.getProductDismissed = this.getProductDismissed.bind(this);
     this.getButtonCouponStatus = this.getButtonCouponStatus.bind(this);
   }
 
-  getProductsTotalPrice(amount) {
-    this.setState({ productsTotalPrice: this.state.productsTotalPrice + amount });
-  }
+  getProductsTotalPrice = amount => this.setState({ productsTotalPrice: this.state.productsTotalPrice + amount })
 
-  getProductDismissed(amount) {
-    this.setState({productsTotalPrice: this.state.productsTotalPrice - amount});
-  }
+  getProductDismissed = amount => this.setState({productsTotalPrice: this.state.productsTotalPrice - amount})
 
   getButtonCouponStatus() {
     this.setState({isCouponInsertHidden: !this.state.isCouponInsertHidden})
@@ -44,7 +39,7 @@ class Main extends Component {
             onProductDismissed={this.getProductDismissed} />
         <ProductsPaymentSummary 
             onButtonCouponClicked={this.getButtonCouponStatus} 
-            productsTotalPrice={this.state.productsTotalPrice} />
+            productsTotalPrxice={this.state.productsTotalPrice} />
         <CouponInsert isHidden={this.state.isCouponInsertHidden}/>
         <CustomerInfo />
       </div>
