@@ -8,10 +8,6 @@ function FormError(props) {
     const customStyle =
             {
                 display: '',
-                fontSize: '0.9em',
-                color: 'red',
-                marginTop: '12px',
-                textAlign: 'right'
             };
     return (
             <div style={customStyle} className={`form-error error-${props.type}`}>
