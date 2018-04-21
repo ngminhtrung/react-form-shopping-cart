@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import formatNumber from '../utils';
+import { formatNumber } from '../utils';
 
 class ProductsPaymentSummary extends Component {
     constructor(props) {

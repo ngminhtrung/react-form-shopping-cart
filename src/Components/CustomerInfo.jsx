@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
-import FormErrors from './FormError';
+import FormError from './FormError';
+import { validateInput } from '../utils';
 
 class CustomerInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            fullname: '',
-            phonenumber: '',
+            fullname: {
+                value: '',
+                isInputValid: true, 
+                errorMessage: ''
+            }, 
+            phonenumber:  {
+                value: '',
+                isInputValid: true, 
+                errorMessage: ''
+            }, 
         }
     }
 
     handleInput = event => {
-        const inputName = event.target.name;
-        const inputValue = event.target.value;
-        this.setState({
-            [inputName]: inputValue
-        })
+        const { name, value } = event.target;
+        // const newState = Object.assign({}, this.state[name]); 
+        const newState = {...this.state[name]};
+        newState.value = value;
+        this.setState({[name]: newState});
     }
-    
+
+    handleInputValidation = event => {
+        const { name } = event.target;
+        const { isInputValid, errorMessage } = validateInput(name, this.state[name].value);
+        const newState = {...this.state[name]};
+        newState.isInputValid = isInputValid;
+        newState.errorMessage = errorMessage;
+        this.setState({[name]: newState})
+    }
+
     render() {
         return (
             <div className="customer-info">
@@ -25,23 +43,30 @@ class CustomerInfo extends Component {
                     <input type="radio" name="gender" defaultValue="male" defaultChecked />Anh
                     <input type="radio" name="gender" defaultValue="female" />Chị
                     <div className="typing-input">
-                        <input 
-                            type="text" 
-                            className="input-field" 
-                            name="fullname" 
-                            placeholder="Họ và tên" 
-                            onChange={this.handleInput}
-                            required />
-                        <input 
+                        <input
                             type="text"
-                            name="phonenumber" 
-                            className="input-field" 
-                            placeholder="Số điện thoại" 
+                            className="input-field"
+                            name="fullname"
+                            placeholder="Họ và tên"
                             onChange={this.handleInput}
+                            onBlur={this.handleInputValidation}
                             required />
-                        <FormErrors 
-                            inputMessage={this.state.phonenumber}
-                            type="phonenumber" />
+                        <FormError
+                            type="fullname"
+                            isHidden={this.state.fullname.isInputValid} 
+                            errorMessage={this.state.fullname.errorMessage} />
+                        <input
+                            type="text"
+                            name="phonenumber"
+                            className="input-field"
+                            placeholder="Số điện thoại"
+                            onChange={this.handleInput}
+                            onBlur={this.handleInputValidation}
+                            required />
+                        <FormError 
+                            type="phonenumber"
+                            isHidden={this.state.phonenumber.isInputValid} 
+                            errorMessage={this.state.phonenumber.errorMessage} />
                         <input type="text" name="others" className="input-field" placeholder="Yêu cầu khác (không bắt buộc)" />
                     </div>
                     <p>Để được giao hàng nhanh hơn, hãy chọn thêm</p>

@@ -31,6 +31,8 @@ nav {
 
 .product {
   display: flex;
+  /* border-bottom: 1px solid #999999; */
+  padding-bottom: 10px;
 }
 
 .product-thumbnail {
@@ -213,6 +215,10 @@ nav {
   border-radius: 5px;
 }
 
+.form-error {
+  width: 100%;
+}
+
 .payment-button a {
   width: 100%;
   margin-top: 10px;
@@ -267,6 +273,21 @@ nav {
   input[name="phonenumber"] {
     width: calc(50% - 5px);
   }
+
+  .form-error {
+    width: calc(50% - 5px);
+    margin-right: 5px;
+  }
+
+  .error-fullname, 
+  .error-phonenumber {
+    order: 1
+  }
+
+  input[name="others"] {
+    order: 2
+  }
+
   .payment-button a {
     width: calc(50% - 5px);
   }

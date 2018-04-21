@@ -1,5 +1,5 @@
 import React from 'react';
-import formatNumber from '../utils';
+import { formatNumber } from '../utils';
 
 class Product extends React.Component {
     constructor(props) {

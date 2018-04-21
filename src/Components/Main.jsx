@@ -39,7 +39,7 @@ class Main extends Component {
             onProductDismissed={this.getProductDismissed} />
         <ProductsPaymentSummary 
             onButtonCouponClicked={this.getButtonCouponStatus} 
-            productsTotalPrxice={this.state.productsTotalPrice} />
+            productsTotalPrice={this.state.productsTotalPrice} />
         <CouponInsert isHidden={this.state.isCouponInsertHidden}/>
         <CustomerInfo />
       </div>
