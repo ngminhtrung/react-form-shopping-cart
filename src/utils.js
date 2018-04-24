@@ -1,8 +1,11 @@
-function formatNumber(number) {
+const formatNumber = number => {
     number = (number + '').replace(/[\D\s_]+/g, "");
     number = number ? parseInt(number, 10) : "";
     return (number === "") ? "" : number.toLocaleString("en-US");
 }
+
+const isUndefined = v => typeof v === "undefined";
+const isDefined = v => typeof v !== "undefined";
 
 const checkingTypes = {
     phonenumber: "phonenumber",
@@ -46,4 +49,4 @@ const validateInput = (type, checkingText) => {
     }
 }
 
-export { formatNumber, validateInput };
+export { formatNumber, validateInput, isDefined, isUndefined };

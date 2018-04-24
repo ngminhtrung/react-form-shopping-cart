@@ -208,6 +208,10 @@ nav {
   justify-content: flex-end;
 }
 
+.input-field-container {
+  width: 100%;
+}
+
 .input-field {
   border: 1px solid #cccccc;
   width: 100%;
@@ -215,6 +219,7 @@ nav {
   min-height: 35px;
   border-radius: 5px;
 }
+
 
 .form-error {
   width: 100%;
@@ -271,18 +276,19 @@ nav {
   .input-field {
     margin-top: 15px;
   }
-  input[name="fullname"] {
-    width: calc(50% - 5px);
-    margin-right: 10px;
-  }
-  input[name="phonenumber"] {
+
+  .input-field-container:not(:last-child) {
     width: calc(50% - 5px);
   }
 
+  .input-field-container:first-child {
+    margin-right: 10px;
+  }
+
   .form-error {
-    width: calc(50% - 5px);
+    /* width: calc(50% - 5px);
     margin-right: 5px;
-    margin-top: 12px;
+    margin-top: 12px; */
   }
 
   .error-fullname, 

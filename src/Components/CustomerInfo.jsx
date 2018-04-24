@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FormError from './FormError';
+import InputForm from './InputForm';
 import { validateInput } from '../utils';
 
 class CustomerInfo extends Component {
@@ -43,31 +43,19 @@ class CustomerInfo extends Component {
                     <input type="radio" name="gender" defaultValue="male" defaultChecked />Anh
                     <input type="radio" name="gender" defaultValue="female" />Chị
                     <div className="typing-input">
-                        <input
+                        <InputForm 
                             type="text"
-                            className="input-field"
-                            name="fullname"
-                            placeholder="Họ và tên"
-                            onChange={this.handleInput}
-                            onBlur={this.handleInputValidation}
-                            required />
-                        <FormError
-                            type="fullname"
-                            isHidden={this.state.fullname.isInputValid} 
-                            errorMessage={this.state.fullname.errorMessage} />
-                        <input
+                            name="fullname" 
+                            needValidation />
+                        <InputForm 
                             type="text"
-                            name="phonenumber"
-                            className="input-field"
-                            placeholder="Số điện thoại"
-                            onChange={this.handleInput}
-                            onBlur={this.handleInputValidation}
-                            required />
-                        <FormError 
-                            type="phonenumber"
-                            isHidden={this.state.phonenumber.isInputValid} 
-                            errorMessage={this.state.phonenumber.errorMessage} />
-                        <input type="text" name="others" className="input-field" placeholder="Yêu cầu khác (không bắt buộc)" />
+                            name="phonenumber" 
+                            needValidation />
+                        <InputForm 
+                            type="text"
+                            name="others" 
+                            needValidation={false}
+                            />    
                     </div>
                     <p>Để được giao hàng nhanh hơn, hãy chọn thêm</p>
                     <input type="radio" name="deliveryAddress" defaultValue="home" defaultChecked />
@@ -89,11 +77,9 @@ class CustomerInfo extends Component {
                         </a>
                     </div>
                 </form>
-
             </div>
         )
     }
-
 }
 
 export default CustomerInfo;
